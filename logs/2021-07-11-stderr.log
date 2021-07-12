@@ -1,0 +1,105 @@
+
+    
+<-<-<================================================================================>->->
+    Logging by leekslazylogger v3.0.2 by eartharoid (http://leeks.js.org/logger)
+    Discord Tickets by eartharoid (Node v14.16.1 on 'Windows')
+    Sunday, 11th July 2021, 10:30 AM (America/Bogota) -->
+    Time format: 'YYYY-MM-DD HH:mm:ss'
+<-<-<================================================================================>->->
+
+
+2021-07-11 10:30:37 [NOTICE] PLEASE INCLUDE THIS INFORMATION IF YOU ASK FOR HELP ABOUT THE FOLLOWING ERROR:
+2021-07-11 10:30:37 [NOTICE] Discord Tickets v1.0.0, Node v14.16.1 on win32
+2021-07-11 10:30:37 [WARN] An error was not caught
+2021-07-11 10:30:37 [WARN] Uncaught Error
+2021-07-11 10:30:37 [ERROR] Error: Cryptr: secret must be a non-0-length string
+    at new Cryptr (C:\Users\SrIcognito\Documents\GitHub\ReedSing Bot\node_modules\cryptr\index.js:12:15)
+    at C:\Users\SrIcognito\Documents\GitHub\ReedSing Bot\src\index.js:135:18
+    at new Bot (C:\Users\SrIcognito\Documents\GitHub\ReedSing Bot\src\index.js:175:5)
+    at Object.<anonymous> (C:\Users\SrIcognito\Documents\GitHub\ReedSing Bot\src\index.js:202:1)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (C:\Users\SrIcognito\Documents\GitHub\ReedSing Bot\index.js:37:1)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)
+
+    
+<-<-<================================================================================>->->
+    Logging by leekslazylogger v3.0.2 by eartharoid (http://leeks.js.org/logger)
+    Discord Tickets by eartharoid (Node v14.16.1 on 'Windows')
+    Sunday, 11th July 2021, 10:30 AM (America/Bogota) -->
+    Time format: 'YYYY-MM-DD HH:mm:ss'
+<-<-<================================================================================>->->
+
+
+2021-07-11 10:30:38 [NOTICE] PLEASE INCLUDE THIS INFORMATION IF YOU ASK FOR HELP ABOUT THE FOLLOWING ERROR:
+2021-07-11 10:30:38 [NOTICE] Discord Tickets v1.0.0, Node v14.16.1 on win32
+2021-07-11 10:30:38 [WARN] An error was not caught
+2021-07-11 10:30:38 [WARN] Uncaught Error
+2021-07-11 10:30:38 [ERROR] Error: Cryptr: secret must be a non-0-length string
+    at new Cryptr (C:\Users\SrIcognito\Documents\GitHub\ReedSing Bot\node_modules\cryptr\index.js:12:15)
+    at C:\Users\SrIcognito\Documents\GitHub\ReedSing Bot\src\index.js:135:18
+    at new Bot (C:\Users\SrIcognito\Documents\GitHub\ReedSing Bot\src\index.js:175:5)
+    at Object.<anonymous> (C:\Users\SrIcognito\Documents\GitHub\ReedSing Bot\src\index.js:202:1)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (C:\Users\SrIcognito\Documents\GitHub\ReedSing Bot\index.js:37:1)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)
+
+    
+<-<-<================================================================================>->->
+    Logging by leekslazylogger v3.0.2 by eartharoid (http://leeks.js.org/logger)
+    Discord Tickets by eartharoid (Node v14.16.1 on 'Windows')
+    Sunday, 11th July 2021, 10:30 AM (America/Bogota) -->
+    Time format: 'YYYY-MM-DD HH:mm:ss'
+<-<-<================================================================================>->->
+
+
+2021-07-11 10:30:57 [WARN] SQLite is not sufficient for a production environment if you want to use ticket archives. You should disable "log_messages" in your servers' settings or use a different database.
+2021-07-11 10:30:57 [NOTICE] PLEASE INCLUDE THIS INFORMATION IF YOU ASK FOR HELP ABOUT THE FOLLOWING ERROR:
+2021-07-11 10:30:57 [NOTICE] Discord Tickets v1.0.0, Node v14.16.1 on win32
+2021-07-11 10:30:57 [WARN] An error was not caught
+2021-07-11 10:30:57 [WARN] Uncaught Error [TOKEN_INVALID]
+2021-07-11 10:30:57 [ERROR] Error [TOKEN_INVALID]: An invalid token was provided.
+    at Bot.login (C:\Users\SrIcognito\Documents\GitHub\ReedSing Bot\node_modules\discord.js\src\client\Client.js:206:52)
+    at C:\Users\SrIcognito\Documents\GitHub\ReedSing Bot\src\index.js:174:9
+2021-07-11 10:30:57 [NOTICE] There is an update available for Discord Tickets (1.0.0 -> v3.0.0)
+
+    
+<-<-<================================================================================>->->
+    Logging by leekslazylogger v3.0.2 by eartharoid (http://leeks.js.org/logger)
+    Discord Tickets by eartharoid (Node v14.16.1 on 'Windows')
+    Sunday, 11th July 2021, 10:31 AM (America/Bogota) -->
+    Time format: 'YYYY-MM-DD HH:mm:ss'
+<-<-<================================================================================>->->
+
+
+2021-07-11 10:31:53 [WARN] SQLite is not sufficient for a production environment if you want to use ticket archives. You should disable "log_messages" in your servers' settings or use a different database.
+2021-07-11 10:31:53 [NOTICE] There is an update available for Discord Tickets (1.0.0 -> v3.0.0)
+
+    
+<-<-<================================================================================>->->
+    Logging by leekslazylogger v3.0.2 by eartharoid (http://leeks.js.org/logger)
+    Discord Tickets by eartharoid (Node v14.16.1 on 'Windows')
+    Sunday, 11th July 2021, 10:32 AM (America/Bogota) -->
+    Time format: 'YYYY-MM-DD HH:mm:ss'
+<-<-<================================================================================>->->
+
+
+2021-07-11 10:32:09 [WARN] SQLite is not sufficient for a production environment if you want to use ticket archives. You should disable "log_messages" in your servers' settings or use a different database.
+2021-07-11 10:32:09 [NOTICE] There is an update available for Discord Tickets (1.0.0 -> v3.0.0)
