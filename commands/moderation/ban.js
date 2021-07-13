@@ -22,13 +22,13 @@ module.exports = {
 
         // No args
         if (!args[0]) {
-            return message.reply("<:no:863629746042961932> Proporcione una persona para banear.")
+            return message.reply("<:no:863629746042961932> | Proporcione una persona para banear.")
             .then(msg => {msg.delete({ timeout: 10000 })})
         }
 
         // No reason
         if (!args[1]) {
-            return message.reply("<:no:863629746042961932> Proporcione una razón para banear.")
+            return message.reply("<:no:863629746042961932> | Proporcione una razón para banear.")
             .then(msg => {msg.delete({ timeout: 10000 })})
         }
 
@@ -36,19 +36,19 @@ module.exports = {
 
         // No member found
         if (!toBan) {
-            return message.reply("<:no:863629746042961932> No se pudo encontrar a ese miembro. Vuelve a intentarlo.")
+            return message.reply("<:no:863629746042961932> | No se pudo encontrar a ese miembro. Vuelve a intentarlo.")
             .then(msg => {msg.delete({ timeout: 10000 })})
         }
 
         // Can't ban urself
         if (toBan.id === message.author.id) {
-            return message.reply("<:no:863629746042961932> No puedes banearte ...")
+            return message.reply("<:no:863629746042961932> | No puedes banearte ...")
             .then(msg => {msg.delete({ timeout: 10000 })})
         }
 
         // Check if the user's banable
         if (!toBan.bannable) {
-            return message.reply("<:no:863629746042961932> No puedo prohibir a esa persona debido a la jerarquía de roles.")
+            return message.reply("<:no:863629746042961932> | No puedo prohibir a esa persona debido a la jerarquía de roles.")
             .then(msg => {msg.delete({ timeout: 10000 })})
         }
         
@@ -98,7 +98,7 @@ module.exports = {
 
                 toBan.ban({ reason: args.slice(1).join(" ") })
                     .catch(err => {
-                        if (err) return message.channel.send(`<:no:863629746042961932> Bueno ... el ban no funcionó. Aquí está el error ${err}`)
+                        if (err) return message.channel.send(`<:no:863629746042961932> | Bueno ... el ban no funcionó. Aquí está el error ${err}`)
                     });
 
                     const ChannelID = db.get(`logs`); 
@@ -109,7 +109,7 @@ module.exports = {
                 } else if (emoji === "❌") {
                 msg.delete();
 
-                message.reply(`<:no:863629746042961932> El ban fue cancelado`)
+                message.reply(`<:no:863629746042961932> | El ban fue cancelado`)
                 .then(msg => {msg.delete({ timeout: 10000 })})
             }
         });

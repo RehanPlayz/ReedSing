@@ -13,7 +13,7 @@ module.exports = {
       const command = await client.commands.get(args[0]);
 
       if (!command) {
-        return message.reply("No Existe el comando **" + args[0] + "**.");
+        return message.reply("<:no:863629746042961932> | No Existe el comando **" + args[0] + "**.");
       }
 
       let embed = new MessageEmbed()
@@ -44,7 +44,7 @@ module.exports = {
       .setColor("#ff951e")         
       .setThumbnail('https://cdn.discordapp.com/emojis/862716833172553739.png?v=1')
 
-      let main = db.fetch(`cdm_${message.guild.id}.MAIN`)
+      let main = db.fetch(`cdm.MAIN`)
       embed1 = new MessageEmbed()
       .setTitle(`Comandos Principales!`)
       .setDescription('Para informacion adicional de un comando usa, **\`!help <Comando>\`**')
@@ -53,7 +53,7 @@ module.exports = {
       .setFooter('1/5')
       .setThumbnail('https://cdn.discordapp.com/emojis/863601090419097610.png?v=1')
 
-      let info = db.fetch(`cdm_${message.guild.id}.INFO`)
+      let info = db.fetch(`cdm.INFO`)
       embed2 = new MessageEmbed()
       .setTitle(`Comandos De Informacion`)
       .setDescription('Para informacion adicional de un comando usa, **\`!help <Comando>\`**')
@@ -62,7 +62,7 @@ module.exports = {
       .setFooter('2/5')
       .setThumbnail('https://cdn.discordapp.com/emojis/863601629168795688.png?v=1')
 
-      let fun = db.fetch(`cdm_${message.guild.id}.FUN`)
+      let fun = db.fetch(`cdm.FUN`)
       embed3 = new MessageEmbed()
       .setTitle(`Comandos De Diversion`)
       .setDescription('Para informacion adicional de un comando usa, **\`!help <Comando>\`**')
@@ -79,21 +79,28 @@ module.exports = {
       .setFooter('4/5')
       .setThumbnail('https://cdn.discordapp.com/emojis/863602125975715860.png?v=1')
 
+      let music = db.fetch(`cdm.MUSIC`)
       embed5 = new MessageEmbed()
       .setTitle(`Comandos De Musica`)
       .setDescription('Para informacion adicional de un comando usa, **\`!help <Comando>\`**')
-      .addField("Comandos ...", `a`)
+      .addField("Comandos ...", `${music}`)
       .setColor("PURPLE")
       .setFooter('5/5')
       .setThumbnail('https://cdn.discordapp.com/emojis/863603166306107401.png?v=1')
 
-      let mod = db.fetch(`cdm_${message.guild.id}.MODERATION`)
-      let admin = db.fetch(`cdm_${message.guild.id}.ADMINISTRATION`)
+      let mod = db.fetch(`cdm.MODERATION`)
+      let admin = db.fetch(`cdm.ADMINISTRATION`)
+      let back = db.fetch(`cdm.BACKUP`)
+      let give = db.fetch(`cdm.GIVEAWAYS`)
       embed6 = new MessageEmbed()
       .setTitle(`Comandos Staff`)
       .setDescription('Para informacion adicional de un comando usa, **\`!help <Comando>\`**')
-      .addField("Comandos Moderacion", `${mod}`)
-      .addField("Comandos Administracion", `${admin}`)
+      .addFields(
+        { name: "> Moderacion", value: `${mod}`, inline: true },
+        { name: '> Administracion', value: `${admin}`, inline: true },
+        { name: '> Backup', value: `${back}`, inline: true },
+      )
+      .addField("> Giveaways", `${give}`)
       .setColor("#DC143C")
       .setFooter('5/5')
       .setThumbnail('https://cdn.discordapp.com/emojis/863603372450643978.png?v=1')
@@ -152,30 +159,35 @@ module.exports = {
           if (menu.clicker.user.id !== message.author.id) return;
 
           if (menu.values[0] === '1') {
+           menu.reply.defer(true)
            await msg.edit({
                   embed: embed1,
                   component: select,
               });
           }
           if (menu.values[0] === '2') {
+            menu.reply.defer(true)
             await msg.edit({
                   embed: embed2,
                   component: select,
               });
           }
           if (menu.values[0] === '3') {
+            menu.reply.defer(true)
             await msg.edit({
                   embed: embed3,
                   component: select,
               });
           }
           if (menu.values[0] === '4') {
+            menu.reply.defer(true)
             await msg.edit({
                     embed: embed4,
                   component: select,
               });
           }
           if (menu.values[0] === '5') {
+            menu.reply.defer(true)
             await msg.edit({
                   embed: embed5,
                   component: select,

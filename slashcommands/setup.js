@@ -53,7 +53,19 @@ module.exports = {
                       {
                         name: "Actualizaciones",
                         value: "updates"
-                      },                                       
+                      },      
+                      {
+                        name: "Giveaways",
+                        value: "give"
+                      },                 
+                      {
+                        name: "Generador de canales de voz privados",
+                        value: "gpvc"
+                      },       
+                      {
+                        name: "Mejoras",
+                        value: "boost"
+                      },                      
                     ]                
                   },
                 {
@@ -251,6 +263,48 @@ module.exports = {
 
         const hecho = new MessageEmbed()
         .setDescription(`Se a actualizado la configuracion de **Canal de Actualizaciones** y su nuevo valor es ${canal}.`)
+        return interaction.reply("", { embed: hecho})
+
+      }
+
+      if (accion == 'give') {
+        if (!interaction.guild.channels.cache.find(x => x.id === valor)) {
+          return interaction.reply("El valor dado no es un canal o no existe.", { flags: 64 })
+       }
+
+        db.set(`give_${interaction.guild.id}`, valor)
+        let canal =  interaction.guild.channels.cache.get(valor);
+
+        const hecho = new MessageEmbed()
+        .setDescription(`Se a actualizado la configuracion de **Canal de Giveaways** y su nuevo valor es ${canal}.`)
+        return interaction.reply("", { embed: hecho})
+
+      }
+
+      if (accion == 'gpvc') {
+        if (!interaction.guild.channels.cache.find(x => x.id === valor)) {
+          return interaction.reply("El valor dado no es un canal o no existe.", { flags: 64 })
+       }
+
+        db.set(`gpvc_${interaction.guild.id}`, valor)
+        let canal =  interaction.guild.channels.cache.get(valor);
+
+        const hecho = new MessageEmbed()
+        .setDescription(`Se a actualizado la configuracion de **Canal de Giveaways** y su nuevo valor es ${canal}.`)
+        return interaction.reply("", { embed: hecho})
+
+      }
+
+      if (accion == 'boost') {
+        if (!interaction.guild.channels.cache.find(x => x.id === valor)) {
+          return interaction.reply("El valor dado no es un canal o no existe.", { flags: 64 })
+       }
+
+        db.set(`boost_${interaction.guild.id}`, valor)
+        let canal =  interaction.guild.channels.cache.get(valor);
+
+        const hecho = new MessageEmbed()
+        .setDescription(`Se a actualizado la configuracion de **Canal de Boost** y su nuevo valor es ${canal}.`)
         return interaction.reply("", { embed: hecho})
 
       }

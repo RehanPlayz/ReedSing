@@ -13,7 +13,7 @@ module.exports = {
   
     //ARGUMENT
      if(!args.length) {
-      return message.channel.send("<:no:863629746042961932> Por favor, envíe un mensaje de estado")
+      return message.channel.send("<:no:863629746042961932> | Por favor, envíe un mensaje de estado")
     }
     
  db.set(`status`, args.join(" "))

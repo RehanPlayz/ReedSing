@@ -13,30 +13,25 @@ module.exports = {
       message.delete();
   }
   
-
-    if (!message.guild.me.hasPermission("MANAGE_ROLES")) {
-      return message.channel.send("No tengo permiso para administrar roles.").then(msg => {msg.delete({ timeout: 10000 })})
-    }
-
     const user = message.mentions.members.first();
 
     if (!user) {
-      return message.channel.reply("<:no:863629746042961932> Mencione al miembro al que desea dejar de silenciar.").then(msg => {msg.delete({ timeout: 10000 })})
+      return message.channel.reply("<:no:863629746042961932> | Mencione al miembro al que desea dejar de silenciar.").then(msg => {msg.delete({ timeout: 10000 })})
     }
     
     let mute = db.get(`muterole_${message.guild.id}`)
     let users = db.get(`userrole_${message.guild.id}`)
 
     if(!mute) {
-      return message.channel.reply("<:no:863629746042961932> No hay rol valido para mutear use **/configuracion setup roles**").then(msg => {msg.delete({ timeout: 10000 })})
+      return message.channel.reply("<:no:863629746042961932> | No hay rol valido para mutear use **/configuracion setup roles**").then(msg => {msg.delete({ timeout: 10000 })})
     }
 
     if(!users) {
-      return message.channel.reply("<:no:863629746042961932> No hay rol valido de usuarios use **/configuracion setup roles**").then(msg => {msg.delete({ timeout: 10000 })})
+      return message.channel.reply("<:no:863629746042961932> | No hay rol valido de usuarios use **/configuracion setup roles**").then(msg => {msg.delete({ timeout: 10000 })})
     }
     
  if(!user.roles.cache.some(role => role.id === mute)) {
-      return message.channel.reply("<:no:863629746042961932> Dado que el usuario no tiene un rol Silencio, ¿qué se supone que debo tomar?").then(msg => {msg.delete({ timeout: 10000 })})
+      return message.channel.reply("<:no:863629746042961932> | Dado que el usuario no tiene un rol Silencio, ¿qué se supone que debo tomar?").then(msg => {msg.delete({ timeout: 10000 })})
     } else { 
     
     user.roles.remove(mute)

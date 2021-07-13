@@ -12,13 +12,13 @@ module.exports = {
     const suggest = args.slice(0).join(" ")
 
     if(!suggest) {
-      return message.channel.send("Por favor dime cual sera tu sugerencia.")
+      return message.channel.send("<:no:863629746042961932> | Por favor dime cual sera tu sugerencia.")
     }
     
     let canal = db.fetch(`suggestions_${message.guild.id}`)
     
     if(canal === null) {
-      return message.channel.send("No existe algun canal para recibir tu sugerencia.")
+      return message.channel.send("<:no:863629746042961932> | No existe algun canal para recibir tu sugerencia.")
     }                             
 
     let id1 = await db.fetch(`sugerencia_${message.guild.id}_ids.idglobal`) 

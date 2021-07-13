@@ -1,7 +1,3 @@
-/**
- * Required Stuff
- */
-
  const db = require("quick.db")
  const { MessageEmbed } = require("discord.js")
  

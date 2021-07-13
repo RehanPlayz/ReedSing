@@ -11,14 +11,14 @@ module.exports = {
 
     let cmdname = args[0]
 
-    if(!cmdname) return message.channel.reply("<:no:863629746042961932> Dame el nombre del comando, `delcmd <cmd_name>`").then(msg => {msg.delete({ timeout: 10000 })})
+    if(!cmdname) return message.channel.reply("<:no:863629746042961932> | Dame el nombre del comando, `delcmd <cmd_name>`").then(msg => {msg.delete({ timeout: 10000 })})
 
     let database = db.get(`cmd_${message.guild.id}`)
 
     if(database) {
       let data = database.find(x => x.name === cmdname.toLowerCase())
 
-      if(!data) return message.channel.reply("<:no:863629746042961932> No se puede encontrar este comando.")
+      if(!data) return message.channel.reply("<:no:863629746042961932> | No se puede encontrar este comando.")
 
       let value = database.indexOf(data)
       delete database[value]
@@ -32,7 +32,7 @@ module.exports = {
 
 
     } else {
-      return message.channel.reply("<:no:863629746042961932> Lo siento, pero no puedo encontrar ese comando!").then(msg => {msg.delete({ timeout: 10000 })})
+      return message.channel.reply("<:no:863629746042961932> | Lo siento, pero no puedo encontrar ese comando!").then(msg => {msg.delete({ timeout: 10000 })})
     
 
 

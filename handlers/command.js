@@ -1,5 +1,5 @@
 const { readdirSync } = require("fs");
-
+const db = require('quick.db')
 const ascii = require("ascii-table");
 
 // Create a new Ascii table
@@ -31,4 +31,35 @@ module.exports = (client) => {
     });
     // Log the table
     console.log(table.toString());
+    
+    let categories = [];
+    readdirSync("./commands/").forEach((dir) => {
+  
+    const editedName = `${dir.toUpperCase()}`;
+    const commands = readdirSync(`./commands/${dir}/`).filter((file) =>
+      file.endsWith(".js")
+    );
+  
+      const cmds = commands.filter((command) => {
+        let file = require(`../commands/${dir}/${command}`);
+        return !file.hidden;
+      }).map((command) => {
+        let file = require(`../commands/${dir}/${command}`);
+  
+        if (!file.name) return "No command name.";
+  
+        let name = file.name.replace(".js", "");
+        return `\`${name}\`\n`;
+      });
+  
+      let data = new Object();
+  
+      data = {
+        name: editedName,
+        value: cmds.length === 0 ? "In progress." : cmds.join(" "),
+      };
+    categories.push(data);
+  
+    db.set(`cdm.${data.name}`, data.value)   
+    })
 }

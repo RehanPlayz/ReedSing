@@ -1,10 +1,10 @@
 module.exports = {
     emojis: {
         off: ':x:',
-        error: '<:no:863629746042961932>',
+        error: '<:no:863629746042961932> |',
         queue: ':bar_chart:',
         music: ':musical_note:',
-        success: '<:yes:863629754463551499>',
+        success: '<:yes:863629754463551499> |',
     },
 
     discord: {

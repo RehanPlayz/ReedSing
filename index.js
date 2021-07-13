@@ -10,6 +10,16 @@ const fs = require('fs');
 const Client = new Discord.Client({
   disableEveryone: true
 });
+const { GiveawaysManager } = require('discord-giveaways');
+Client.giveawaysManager = new GiveawaysManager(Client, {
+    storage: "./giveaways.json",
+    updateCountdownEvery: 5000,
+    default: {
+        botsCanWin: false,
+        embedColor: "RANDOM",
+        reaction: "🎉"
+    }
+});
 
 Buttons(Client);
 ButtonsMenu(Client);
@@ -51,6 +61,7 @@ const DIFF = 3000;
 
 Client.on('message', async (message) => {
   if(message.author.bot) return;
+  if(!message.member.hasPermission("ADMINISTRATOR")) {
   if(map.has(message.author.id)) {
     const data = map.get(message.author.id);
     const { lastMessage, timer } = data;
@@ -94,7 +105,8 @@ Client.on('message', async (message) => {
         msgCount: 1,
         lastMessage : message,
         timer : fn
-    });
+      });
+    }
   }
 })
 

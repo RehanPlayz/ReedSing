@@ -3,7 +3,8 @@ const stripIndent = require("common-tags").stripIndent;
 const config = require('../config/config');
 
 
-module.exports.run = (client) => {
+module.exports.run = (client) => {  
+  
   console.log(stripIndent`
   ----------------------------------------
   @${client.user.username} esta online!
@@ -11,5 +12,6 @@ module.exports.run = (client) => {
   Hecho por: ${config.bot.botCreator}
   ----------------------------------------
   `);  
-  client.user.setActivity(db.get(`status`) || "ReedSing | SrIcognito"); 
+  client.user.setActivity(db.get(`status`) || "ReedSing | SrIcognito");
+  
 }

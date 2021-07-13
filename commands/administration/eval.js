@@ -9,8 +9,7 @@ module.exports = {
 	aliases: ['ev'],
 	description: 'Evaluate a specified JavaScript code.',
 	usage: 'eval <code>',
-	userperms: ['BOT_OWNER'],
-	botperms: ['USE_EXTERNAL_EMOJIS'],
+	onlyOwner: true,
 	run: async (client, message, args) => {
 		const embed = new MessageEmbed()
 			.addField('Entrada', '```js\n' + args.join(' ') + '```');
@@ -19,7 +18,7 @@ module.exports = {
 		const code = args.join(' ');
 		if (!code) {
 			return message.channel.send(
-				'<:no:863629746042961932> Por favor ingrese un codigo valido.',
+				'<:no:863629746042961932> | Por favor ingrese un codigo valido.',
 			);
 		}
 
@@ -50,7 +49,7 @@ module.exports = {
 					});
 				}
 				catch(e) {
-					return message.channel.reply('Un error ha ocurrido, intentalo otra vez!');
+					return message.channel.reply('<:no:863629746042961932> | Un error ha ocurrido, intentalo otra vez!');
 				}
 
 				embed.addField('Salida', `${response.url}`).setColor('GREEN');
@@ -80,7 +79,7 @@ module.exports = {
 					});
 				}
 				catch(e) {
-					return message.channel.reply('Un error ha ocurrido, intentalo otra vez!');
+					return message.channel.reply('<:no:863629746042961932> | Un error ha ocurrido, intentalo otra vez!');
 				}
 
 				embed.addField('Salida', `${response.url}`).setColor('RED');
@@ -89,7 +88,7 @@ module.exports = {
 				embed.addField('Salida', `\`\`\`js\n${err}\`\`\``).setColor('RED');
 			}
 
-			embed.setTitle('Error!');
+			embed.setTitle('<:no:863629746042961932> | Error!');
 			return message.channel.send(embed);
 		}
 	},

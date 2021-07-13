@@ -7,13 +7,13 @@ module.exports = {
     usage: 'queue',
     description: "Revisa la queue actual.",
     run: async (client, message, args) => {
-        if (!message.member.voice.channel) return message.channel.send(`${client.emotes.error} - No estas en un canal de voz!`);
+        if (!message.member.voice.channel) return message.channel.send(`${client.emotes.error} No estas en un canal de voz!`);
 
-        if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return message.channel.send(`${client.emotes.error} - No estamos en el mismo canal de voz!`);
+        if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return message.channel.send(`${client.emotes.error} No estamos en el mismo canal de voz!`);
 
         const queue = client.player.getQueue(message);
 
-        if (!client.player.getQueue(message)) return message.channel.send(`${client.emotes.error} - No hay canciones actualmente en reproduccion!`);
+        if (!client.player.getQueue(message)) return message.channel.send(`${client.emotes.error} No hay canciones actualmente en reproduccion!`);
         let loopc = `` 
         let loopq = ``
     

@@ -39,12 +39,12 @@ module.exports = {
     } else {
 
       user = message.mentions.members.first() || await message.guild.members.fetch(args[0]).catch(err => {
-        return message.channel.send(":x: No se puede encontrar a esta persona")
+        return message.channel.send("<:no:863629746042961932> | No se puede encontrar a esta persona")
       })
     }
 
     if (!user) {
-      return message.channel.send(":x: No se puede encontrar a esta persona!")
+      return message.channel.send("<:no:863629746042961932> | No se puede encontrar a esta persona!")
     }
 
     let level = xp.getLevel(message, user.id)
@@ -130,7 +130,7 @@ module.exports = {
 
 
     return message.channel.send(embed).catch(err => {
-      return message.channel.send("Error : " + err)
+      return message.channel.send("<:no:863629746042961932> | Error : " + err)
     })
 
 

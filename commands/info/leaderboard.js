@@ -21,7 +21,7 @@ module.exports = {
         const lv = db.fetchAll().filter(data => data.ID.startsWith(`requiredxp_${message.guild.id}_`)).sort((a, b) => b.data - a.data);
         const ld = db.fetchAll().filter(data => data.ID.startsWith(`level_${message.guild.id}_`)).sort((a, b) => b.data - a.data);
 
-        if (lb.length < 1) return message.channel.send("No leaderboard");
+        if (lb.length < 1) return message.channel.send("<:no:863629746042961932> | No leaderboard");
         lb.length = 10;
 
         let i = 0;

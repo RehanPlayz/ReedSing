@@ -2,9 +2,9 @@ const {MessageEmbed} = require("discord.js")
 const db = require("quick.db")
 
 module.exports = {
-  name: "noticias",
+  name: "notices",
   category: "administration",
-  usage: "noticias <Normal/Spoiler/Rules/Updates> <Texto> [Adjuntar Imagen]",
+  usage: "notices <Normal/Spoiler/Rules/Updates> <Texto> [Adjuntar Imagen]",
   description: "Manda una noticia a los miembros del servidor.",
   botPermission: ['MANAGE_MESSAGES'],
   authorPermission: ['MANAGE_MESSAGES'],
@@ -26,7 +26,7 @@ module.exports = {
 
       const texto = args.slice(1).join(" ")
       if (!texto){
-        return message.channel.send("<:no:863629746042961932> No hay texto valido por favor reintente el comando!").then(msg => {msg.delete({ timeout: 10000 })})
+        return message.channel.send("<:no:863629746042961932> | No hay texto valido por favor reintente el comando!").then(msg => {msg.delete({ timeout: 10000 })})
       }
                 if (new RegExp(`\\b(?:${val1.join("|")})\\b`, "gi").test(accion) ? true : false) {
                   if(!notice) return message.reply("No hay algun canal de Noticias, use /configuracion setup canales.").then(msg => {msg.delete({ timeout: 10000 })})
@@ -140,7 +140,7 @@ module.exports = {
                     }
                   }
     } else {
-      return message.channel.send("<:no:863629746042961932> No pusiste una opcion valida, las opciones son **\`Normal/Spoiler/Rules/Updates\`**!").then(msg => {msg.delete({ timeout: 10000 })})
+      return message.channel.send("<:no:863629746042961932> | No pusiste una opcion valida, las opciones son **\`Normal/Spoiler/Rules/Updates\`**!").then(msg => {msg.delete({ timeout: 10000 })})
     }
   }
 }

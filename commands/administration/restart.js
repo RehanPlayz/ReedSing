@@ -1,8 +1,8 @@
 const config = require("../../config/config")
 
 module.exports = {
-    name: "reiniciar",
-    usage: "reiniciar",
+    name: "restart",
+    usage: "restart",
     description: "Reinicia el bot.",
     category: "administration",
     botPermission: ['ADMINISTRATOR'],
@@ -13,11 +13,11 @@ module.exports = {
 			message.channel.send('⚙ Reiniciando ...').then(msg => msg.delete({ timeout: 300 }))
 				.then(() => client.destroy())
 				.then(() => client.login(config.discord.token))
-				.then(() => message.channel.send('<:yes:863629754463551499> Reinicio perfecto!'));
+				.then(() => message.channel.send('<:yes:863629754463551499> | Reinicio perfecto!'));
 		}
 		catch (e) {
 			return message.channel.reply(
-				'<:no:863629746042961932> Un error ha pasado, por favor vuelva a intentarlo!',
+				'<:no:863629746042961932> | Un error ha pasado, por favor vuelva a intentarlo!',
 			);
 		}
 	},

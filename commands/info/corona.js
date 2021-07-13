@@ -29,7 +29,7 @@ module.exports = {
       let jsonData = await fetch(`https://disease.sh/v3/covid-19/countries/${args.join(" ")}`)
       jsonData = await jsonData.json()
 
-      if(!jsonData.country) return message.reply("No puedo conseguir el **" + args[0] + "** detalles.")
+      if(!jsonData.country) return message.reply("<:no:863629746042961932> | No puedo conseguir el **" + args[0] + "** detalles.")
 
       embed.setTitle(`${jsonData.country.toUpperCase()}`)
            .setColor("GREEN")
@@ -44,7 +44,7 @@ module.exports = {
     }
 
     return message.channel.send(embed).catch(err => {
-      return message.reply("Se produjo un error. Vuelve a intentarlo más tarde.")
+      return message.reply("<:no:863629746042961932> | Se produjo un error. Vuelve a intentarlo más tarde.")
     }) //send something lol
 
   }

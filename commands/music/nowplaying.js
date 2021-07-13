@@ -7,11 +7,11 @@ module.exports = {
     usage: 'nowplaying',
     description: "Revisa cual es la cancion en reproduccion.",
     run: async (client, message, args) => {
-        if (!message.member.voice.channel) return message.channel.send(`${client.emotes.error} - No estas en un canal de voz!`);
+        if (!message.member.voice.channel) return message.channel.send(`${client.emotes.error} No estas en un canal de voz!`);
 
-        if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return message.channel.send(`${client.emotes.error} - No estamos en el mismo canal de voz!`);
+        if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return message.channel.send(`${client.emotes.error} No estamos en el mismo canal de voz!`);
 
-        if (!client.player.getQueue(message)) return message.channel.send(`${client.emotes.error} - No hay musica actualmente en reproduccion!`);
+        if (!client.player.getQueue(message)) return message.channel.send(`${client.emotes.error} No hay musica actualmente en reproduccion!`);
 
         const track = client.player.nowPlaying(message);
         const filters = [];

@@ -17,29 +17,29 @@ module.exports = {
     const user = message.mentions.members.first()
     
     if(!user) {
-      return message.channel.reply("<:no:863629746042961932> Por favor, mencione a la persona a la que desea advertir - warn @user <reason>").then(msg => {msg.delete({ timeout: 10000 })})
+      return message.channel.reply("<:no:863629746042961932> | Por favor, mencione a la persona a la que desea advertir - warn @user <reason>").then(msg => {msg.delete({ timeout: 10000 })})
     }
     
     if(message.mentions.users.first().bot) {
-      return message.channel.reply("<:no:863629746042961932> No puedes advertir a los bots").then(msg => {msg.delete({ timeout: 10000 })})
+      return message.channel.reply("<:no:863629746042961932> | No puedes advertir a los bots").then(msg => {msg.delete({ timeout: 10000 })})
     }
     
     if(message.author.id === user.id) {
-      return message.channel.reply("<:no:863629746042961932> No puedes advertirte a ti mismo").then(msg => {msg.delete({ timeout: 10000 })})
+      return message.channel.reply("<:no:863629746042961932> | No puedes advertirte a ti mismo").then(msg => {msg.delete({ timeout: 10000 })})
     }
     
     if(user.id === message.guild.owner.id) {
-      return message.channel.reply("<:no:863629746042961932> Idiota, ¿cómo puedes advertir al propietario del servidor? -_-").then(msg => {msg.delete({ timeout: 10000 })})
+      return message.channel.reply("<:no:863629746042961932> | Idiota, ¿cómo puedes advertir al propietario del servidor? -_-").then(msg => {msg.delete({ timeout: 10000 })})
     }
     
     if(user.highestRole.position >= message.author.highestRole.position) {
-      return message.channel.reply("<:no:863629746042961932> No puedes advertir a alguien superior a ti!").then(msg => {msg.delete({ timeout: 10000 })})
+      return message.channel.reply("<:no:863629746042961932> | No puedes advertir a alguien superior a ti!").then(msg => {msg.delete({ timeout: 10000 })})
     }
 
     const reason = args.slice(1).join(" ")
     
     if(!reason) {
-      return message.channel.reply("<:no:863629746042961932> Proporcione una razón para advertir.").then(msg => {msg.delete({ timeout: 10000 })})
+      return message.channel.reply("<:no:863629746042961932> | Proporcione una razón para advertir.").then(msg => {msg.delete({ timeout: 10000 })})
     }
     
     let warnings = db.get(`warnings_${message.guild.id}_${message.author.id}`)
@@ -52,11 +52,11 @@ module.exports = {
       let users = db.get(`userrole_${message.guild.id}`)
 
       if(!mute) {
-        return message.channel.reply("<:no:863629746042961932> No hay rol valido para mutear use **/configuracion setup roles**").then(msg => {msg.delete({ timeout: 10000 })})
+        return message.channel.reply("<:no:863629746042961932> | No hay rol valido para mutear use **/configuracion setup roles**").then(msg => {msg.delete({ timeout: 10000 })})
       }
   
       if(!users) {
-        return message.channel.reply("<:no:863629746042961932> No hay rol valido de usuarios use **/configuracion setup roles**").then(msg => {msg.delete({ timeout: 10000 })})
+        return message.channel.reply("<:no:863629746042961932> | No hay rol valido de usuarios use **/configuracion setup roles**").then(msg => {msg.delete({ timeout: 10000 })})
       }
 
       let reason = "Alcanzar el maximo de advertencias"

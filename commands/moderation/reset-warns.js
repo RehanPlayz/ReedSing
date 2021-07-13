@@ -18,26 +18,26 @@ module.exports = {
     const user = message.mentions.members.first()
     
     if(!user) {
-    return message.channel.send("<:no:863629746042961932> Mencione a la persona cuya advertencia desea restablecer.").then(msg => {msg.delete({ timeout: 10000 })})
+    return message.channel.send("<:no:863629746042961932> | Mencione a la persona cuya advertencia desea restablecer.").then(msg => {msg.delete({ timeout: 10000 })})
     }
     
     if(message.mentions.users.first().bot) {
-      return message.channel.send("<:no:863629746042961932> Los bots no pueden tener advertencias").then(msg => {msg.delete({ timeout: 10000 })})
+      return message.channel.send("<:no:863629746042961932> | Los bots no pueden tener advertencias").then(msg => {msg.delete({ timeout: 10000 })})
     }
     
     if(message.author.id === user.id) {
-      return message.channel.send("<:no:863629746042961932> No tiene permitido restablecer sus advertencias.").then(msg => {msg.delete({ timeout: 10000 })})
+      return message.channel.send("<:no:863629746042961932> | No tiene permitido restablecer sus advertencias.").then(msg => {msg.delete({ timeout: 10000 })})
     }
     
     let warnings = db.get(`warnings_${message.guild.id}_${user.id}`)
     let ad = db.fetch(`warningsg_${message.guild.id}_${user.id}`)
 
     if(ad === null) {
-      return message.channel.send(`<:no:863629746042961932> ${message.mentions.users.first().username} no tienen ninguna advertencia.`).then(msg => {msg.delete({ timeout: 10000 })})
+      return message.channel.send(`<:no:863629746042961932> | ${message.mentions.users.first().username} no tienen ninguna advertencia.`).then(msg => {msg.delete({ timeout: 10000 })})
     }
 
     if(warnings === null) {
-      return message.channel.send(`<:no:863629746042961932> ${message.mentions.users.first().username} no tienen ninguna advertencia actual.`).then(msg => {msg.delete({ timeout: 10000 })})
+      return message.channel.send(`<:no:863629746042961932> | ${message.mentions.users.first().username} no tienen ninguna advertencia actual.`).then(msg => {msg.delete({ timeout: 10000 })})
     }
     
     const ReedSing = client.emojis.cache.find(emoji => emoji.name === "ReedSingOriginal");

@@ -128,11 +128,12 @@ if(db.has(`afk_${message.guild.id}_${message.author.id}`)) {
 // Level-System
 function addexp(message) {
   let lvl = db.get(`levelchannel_${message.guild.id}`)
+  let channel = client.channels.cache.get(lvl)
   const xp = new XP.SQLiteManager({ 
     deleteMessage: true,
     cooldown: 10000,
     levelUpMessage: `¡${message.author} Subiste de nivel, Reed te dara Caricias x{{level}}!`,
-    levelUpChannel: `${lvl}`,
+    levelUpChannel: `${channel}`,
   })
 
   let prefix = "f!"
@@ -166,17 +167,17 @@ function addexp(message) {
    /* P E R M I S S I O N S */
   if (command.botPermission) {
     const Permissions = command.botPermission.filter(x => !message.guild.me.hasPermission(x)).map(x => "`" + x + "`")
-    if (Permissions.length) return message.channel.send(`<:no:863629746042961932> Yo nesecito ${Permissions.join(", ")} permiso(s) para ejecutar el comando!`)
+    if (Permissions.length) return message.channel.send(`<:no:863629746042961932> | Yo nesecito ${Permissions.join(", ")} permiso(s) para ejecutar el comando!`)
   } 
   
   if (command.authorPermission) {
     const Permissions = command.authorPermission.filter(x => !message.member.hasPermission(x)).map(x => "`" + x + "`")
-    if (Permissions.length) return message.channel.send(`<:no:863629746042961932> Tu nesesitas ${Permissions.join(", ")} permiso(s) para ejecutar el comando!`)
+    if (Permissions.length) return message.channel.send(`<:no:863629746042961932> | Tu nesesitas ${Permissions.join(", ")} permiso(s) para ejecutar el comando!`)
   }
 
   /* O W N E R */
   if (command.ownerOnly) {
-    if (message.author.id !== config.discord.ownerID) return message.channel.send("<:no:863629746042961932> El comando es solo para mi dueño.")
+    if (message.author.id !== config.discord.ownerID) return message.channel.send("<:no:863629746042961932> | El comando es solo para mi dueño.")
   }
 
   /* C O O L - D O W N */
@@ -187,7 +188,7 @@ function addexp(message) {
   }
 
   let time = uCooldown[command.name] || 0
-  if (time && (time > Date.now())) return message.channel.send(`<:no:863629746042961932> Tu puedes volver a usar el comando en ${Math.ceil((time - Date.now()) / 1000)} segundo(s)`) 
+  if (time && (time > Date.now())) return message.channel.send(`<:no:863629746042961932> | Tu puedes volver a usar el comando en ${Math.ceil((time - Date.now()) / 1000)} segundo(s)`) 
   cooldown[message.author.id][command.name] = Date.now() + command.cooldown;
 
   if (command) command.run(client, message, args);

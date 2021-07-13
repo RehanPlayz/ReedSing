@@ -24,7 +24,7 @@ module.exports = {
         }
 
         if (user.bot) {
-            return message.channel.send("Los bots no tienen niveles")
+            return message.channel.send("<:no:863629746042961932> | Los bots no tienen niveles")
         }
 
         let level = xp.getLevel(message, user.id)

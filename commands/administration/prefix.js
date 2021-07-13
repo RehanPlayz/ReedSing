@@ -11,15 +11,15 @@ module.exports = {
   run: async (client, message, args) => {
     
     if(!args[0]) {
-      return message.channel.send("<:no:863629746042961932> Por favor elije que prefix pondras.")
+      return message.channel.send("<:no:863629746042961932> | Por favor elije que prefix pondras.")
     } 
     
     if(args[1]) {
-      return message.channel.send("<:no:863629746042961932> No puedes poner un prefix de doble argumento.")
+      return message.channel.send("v No puedes poner un prefix de doble argumento.")
     }
     
     if(args[0].length > 3) {
-      return message.channel.send("<:no:863629746042961932> No puedes poner un prefix con mas de 3 caracteres.")
+      return message.channel.send("<:no:863629746042961932> | No puedes poner un prefix con mas de 3 caracteres.")
     }
     
     if(args.join("") === config.discord.default_prefix) {
