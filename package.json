@@ -17,7 +17,7 @@
   ],
   "dependencies": {
     "-": "0.0.1",
-    "@discordjs/opus": "^0.3.3",
+    "@discordjs/opus": "^0.5.3",
     "@discordjs/uws": "^10.149.0",
     "@quick.eco/sqlite": "git+https://github.com/DevSnowflake/quick.eco-sqlite.git",
     "ascii-table": "^0.0.9",
